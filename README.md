@@ -20,7 +20,7 @@ This repository is for students to submit Entity‑Relationship Diagrams (ERDs) 
 3. Create your ERD file:
    - Ensure the bigER extension is installed and Java works (`java -version`).
    - Add a new file at the repo root, e.g., `Firstname_Lastname.erd`.
-   - Command Palette → “New Sample ER Model” to start, or write your own.
+   - Command Palette → “New Sample ER Model” to start, or write your own. Follow instructions in class. 
    - To view the diagram: use the “Open Diagram” button in the editor toolbar or press Ctrl/⌘+O.
 4. Commit and push to your fork:
    - Source Control view → stage the `.erd` file → commit with a clear message → push/sync.
