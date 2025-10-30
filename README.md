@@ -13,43 +13,37 @@ This repository is for students to submit Entity‑Relationship Diagrams (ERDs) 
 - Windows (winget): `winget install --id EclipseAdoptium.Temurin.17.JDK -e`
 - Verify: `java -version` (shows 11+)
 
-## Workflow (Fork → Clone → Model → PR)
-1. Fork this repo: open https://github.com/BADM554/ERD and click “Fork”.
-2. Clone your fork in VS Code:
-   - Command Palette → “Git: Clone” → paste your fork URL `https://github.com/<your-username>/ERD.git` → Open folder.
-3. Create your ERD file:
-   - Ensure the bigER extension is installed and Java works (`java -version`).
-   - Add a new file at the repo root, e.g., `Firstname_Lastname.erd`.
-   - Command Palette → “New Sample ER Model” to start, or write your own. Follow instructions in class. 
-   - To view the diagram: use the “Open Diagram” button in the editor toolbar or press Ctrl/⌘+O.
-4. Commit and push to your fork:
-   - Source Control view → stage the `.erd` file → commit with a clear message → push/sync.
-5. Open a Pull Request to the course repo:
-   - VS Code: “Create Pull Request”, or on GitHub: “Compare & pull request”.
-   - Base: `BADM554/ERD` (main). Head: your fork/branch.
+## Submission (No PRs/Merges)
+You will submit your ERD via a GitHub Issue — no forks or pull requests required.
 
-## Git one‑time setup
+1) Create your ERD in VS Code
+- Ensure bigER extension is installed and Java works: `java -version` shows 11+.
+- Create a file at the repo root, for example: `Firstname_Lastname.erd`.
+- Use Command Palette → “New Sample ER Model” to start, or write your own.
+- Open the diagram from the editor toolbar or press Ctrl/⌘+O.
+
+2) Submit via GitHub Issue
+- Go to: https://github.com/BADM554/ERD/issues → “New issue”.
+- Choose “ERD Submission” template (if available) or open a blank issue.
+- Title: `Submission: Firstname Lastname`.
+- Attach your `.erd` file by dragging it into the issue body.
+- Provide any requested details (name, section, email) and click “Submit new issue”.
+
+3) Updates/Resubmissions
+- If you need to resubmit, open a new issue with the updated `.erd` attached.
+
+## Optional: Git one‑time setup (only if you plan to use Git locally)
 Run once in a VS Code terminal:
 ```
 git config --global user.name "Your Name"
 git config --global user.email "you@example.com"
 ```
 
-## Updating your fork (optional)
-If the course repo updates, sync before new work:
-```
-git remote add upstream https://github.com/BADM554/ERD.git
-git fetch upstream
-git checkout main
-# choose merge or rebase
-git merge upstream/main   # or: git rebase upstream/main
-```
+## Notes
+- You do not need to fork or open a pull request for submissions.
+- Place your `.erd` file(s) at the repository root when working locally.
+- Keep filenames consistent with the convention `Firstname_Lastname.erd` unless instructed otherwise.
 
 ## Troubleshooting
-- bigER inactive or no diagram: ensure file ends with `.erd` and the extension is enabled.
+- bigER inactive or no diagram: ensure the file ends with `.erd` and the extension is enabled.
 - Java not found: install JDK 11+ (see above) and restart VS Code.
-- Cannot push: confirm you cloned your fork (URL has your username), not the course repo.
-
-## Notes
-- Place your `.erd` file(s) at the repository root unless told otherwise.
-- Keep commits small and messages descriptive.

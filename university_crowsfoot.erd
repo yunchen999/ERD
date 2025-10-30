@@ -35,6 +35,7 @@ entity Enrollment {
     student_id: INTEGER
     course_id: VARCHAR(10)
     grade: VARCHAR(2)
+        semester: VARCHAR(20)
 }
 
 relationship StudentEnrollment {
