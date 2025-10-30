@@ -1,0 +1,82 @@
+erdiagram yunchen_lee
+
+notation=crowsfoot
+
+// Customer entity
+entity Customer {
+    c_id: INTEGER key
+    c_name: VARCHAR(100)
+    c_phone: VARCHAR(10)
+}
+
+// Vendor entity
+entity Vendor {
+    v_id: INTEGER key
+    v_name: VARCHAR(100)
+    v_phone: VARCHAR(10)
+}
+
+// Product entity
+entity Product {
+    p_id: INTEGER key
+    p_category: VARCHAR(50)
+    p_price: DECIMAL(10,2)
+    p_description: TEXT
+}
+
+// Invoice entity
+entity Invoice {
+    i_id: INTEGER key
+    i_date: DATE
+    inv_payment_type: VARCHAR(20)
+    i_total_price: DECIMAL(10,2)
+}
+
+// Order entity
+entity Order {
+    o_id: INTEGER key
+    o_quantity: INTEGER
+    o_price: DECIMAL(10,2)
+}
+
+// Inventory entity
+entity Inventory {
+    in_id: INTEGER key
+    date: DATE
+}
+
+// Back_order entity
+entity Back_order {
+    b_id: INTEGER key
+    status: INTEGER
+    b_date: DATE
+}
+
+// Relationships
+relationship Customer_Invoice {
+    Customer[1..1] -> Invoice[0..N]
+}
+
+relationship Vendor_Product {
+    Vendor[1..1] -> Product[1..N]
+}
+
+relationship Product_Order {
+    Product[1..1] -> Order[0..N]
+}
+
+relationship Invoice_Order {
+    Invoice[1..1] -> Order[1..N]
+}
+
+relationship Order_BackOrder {
+    Order[1..1] -> Back_order[0..1]
+}
+
+relationship Product_Inventory {
+    Product[1..1] -> Inventory[0..N]
+}
+
+relationship Customer_BackOrder {
+    Customer[1..1] -> Back_order[0..N]
+}
