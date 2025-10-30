@@ -1,0 +1,30 @@
+﻿Entities & attributes
+Invoice : i_id (pk), c_id, i_date, inv_payment_type, i_total_price
+Customer : c_id (pk), c_name, c_name, c_phone
+Order : o_id, i_id, p_id, o_quantity, o_price
+Inventory : in_id, p_id, date
+Vendor : v_id, v_name, v_phone
+Product : p_id, p_category, v_id, p_price, p_description
+Back_order : b_id, c_id, o_id, status, b_date
+
+
+Constraint
+Each i_id must be unique, not null , and numeric 
+Each p_id must be unique, not null , and numeric
+Each v_id must be unique, not null , and numeric
+Each o_id must be unique, not null , and numeric
+Each b_id must be unique, not null , and numeric 
+Each v_phone must have 10 digits
+Each c_phone must have 10 digits
+Each i_payment_type must be either “credit card”, “debit card”, “cash”, or “check”
+Each status must be -1, 0, 1: -1 represent canceled, 0 means still waiting, 1 means delivered
+
+
+Relation
+Each customer can have 0 or many invoices, each invoice only relates to one customer.
+Each vendor provides at least one product, each product is supplied by only one vendor
+Each product can be in 0 or many orders, each order contains one product
+Each invoice can have one or many orders, each order has one invoice
+Each order can have one back order, each back order have one order
+Each inventory can have one product, each product can have many inventories
+Each back order can have one customer, each customer can have many back orders
